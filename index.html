@@ -4,110 +4,89 @@
  * @Author: xianran
  * @Date: 2020-08-31 16:56:21
  * @LastEditors: xianran
- * @LastEditTime: 2020-09-07 11:07:16
+ * @LastEditTime: 2020-09-07 15:54:23
 -->
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-		<script src="./lib/echarts.min.js"></script>
-	</head>
-	<body>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>欢迎鸭</title>
+	<link rel="stylesheet" href="./css/common.css">
+	<link rel="stylesheet" href="./css/iconfont.css">
+</head>
+<body>
+	<div id="index-page main-content">
+		<header id="header">
+			<div class="header-left logo-wrapper">
+				<img src="" alt="站点logo">
+			</div>
+			<div class="header-right nav-wrapper">
+				<ul>
+					<li class="nav-item">
+						<a href="https://xianran97.github.io/">
+							<i class="icon iconfont icon-zhiyin"></i>
+							<span>指引我</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="./data.html">
+							<i class="icon iconfont icon-shuju"></i>
+							<span>数据图表</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="./daily.html">
+							<i class="icon iconfont icon-shenghuo"></i>
+							<span>博主日常</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="./about.html">
+							<i class="icon iconfont icon-wode"></i>
+							<span>关于博主</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</header>
 
-        <!-- 技能树 -->
-        <div id="career-skill-tree" style="width: 600px;height:400px;"></div>
-        <!-- 人生饼图 -->
-        <div id="life-dynamic-pie" style="width: 600px;height:400px;"></div>
-        <!-- 访客分布图 -->
-        <div id="visitor-dot-map" style="width: 600px;height:400px;"></div>
+		<div class="main-wrapper">
+			<img class="head-photo" src="" alt="博主头像">
+			<p class="page-title">页面大标题</p>
+			<p class="sub-title">页面副标题</p>
+			<ul>
+				<li>
+					<a href="">
+						<i class="icon iconfont icon-circular-QQ"></i>
+						<span>QQ</span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<i class="icon iconfont icon-circular-WeChat"></i>
+						<span>微信</span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<i class="icon iconfont icon-circular-Weibo"></i>
+						<span>微博</span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<i class="icon iconfont icon-bokeyuan"></i>
+						<span>博客园</span>
+					</a>
+				</li>
+			</ul>
+		</div>
 
-		<script type="text/javascript">
-			// 技能树start
-			var cstChart = echarts.init(document.getElementById('career-skill-tree'));
-			var cstOption = {
-			    title: {
-			        text: '职业技能树'
-			    },
-			    tooltip: {},
-			    legend: {},
-			    radar: {
-			        // shape: 'circle',
-			        name: {
-			            textStyle: {
-			                color: '#fff',
-			                backgroundColor: '#999',
-			                borderRadius: 3,
-			                padding: [3, 5]
-			            }
-			        },
-			        indicator: [
-			            { name: 'JavaScript', max: 5},
-			            { name: 'HTML', max: 5},
-			            { name: 'CSS', max: 5},
-			            { name: 'Vue', max: 5},
-			            { name: 'jQuery', max: 5},
-			            { name: 'AntDesign', max: 5}
-			        ]
-			    },
-			    series: [{
-			        name: '当前',
-			        type: 'radar',
-			        data: [
-			            {
-			                value: [3, 4, 4, 3, 3, 3],
-			                name: '当前状态'
-			            }
-			        ]
-			    }]
-			};
-			cstChart.setOption(cstOption);
-			// 技能树end
-			
-			// 时间饼图start
-			var ldpChart = echarts.init(document.getElementById('life-dynamic-pie'));
-			var ldpOption = {
-				title: {
-				    text: '人生旭日图'
-				},
-			    series: {
-			        type: 'sunburst',
-			        data: [{
-			            name: '生活',
-			            value: 6,
-			            children: [{
-			                value: 1,
-			                name: 'Aa'
-			            }, {
-			                value: 2,
-			                name: 'Ab'
-			            }]
-			        }, {
-			            name: '工作',
-						value: 10,
-			            children: [{
-			                name: 'Ba',
-			                value: 4
-			            }, {
-			                name: 'Bb',
-			                value: 2
-			            }]
-			        }, {
-			            name: '睡眠',
-			            value: 7
-			        }]
-			    }
-			};
-			ldpChart.setOption(ldpOption);
-			// 时间饼图end
-
-            // 访客分布图
-            var data = [
-                    {name: '海门', value: 9},
-                    {name: '鄂尔多斯', value: 12},
-                    {name: '招远', value: 12},
-                    {name: '舟山', value: 12},
-                ];
-		</script>
-	</body>
+		<footer id="footer">
+			<p>Copyright © 2020 xianran All Rights Reserved. 备案号：</p>
+		</footer>
+	</div>
+</body>
 </html>
