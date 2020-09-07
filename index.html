@@ -1,1 +1,99 @@
-Hello World
+<!--
+ * @Descripttion: 
+ * @version: 0.0.0
+ * @Author: xianran
+ * @Date: 2020-08-31 16:56:21
+ * @LastEditors: xianran
+ * @LastEditTime: 2020-09-07 10:14:01
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="./lib/echarts.min.js"></script>
+	</head>
+	<body>
+		<div id="career-skill-tree" style="width: 600px;height:400px;"></div>
+		<div id="life-dynamic-pie" style="width: 600px;height:400px;"></div>
+		<script type="text/javascript">
+			// 职业技能树start
+			var cstChart = echarts.init(document.getElementById('career-skill-tree'));
+			var cstOption = {
+			    title: {
+			        text: '职业技能树'
+			    },
+			    tooltip: {},
+			    legend: {},
+			    radar: {
+			        // shape: 'circle',
+			        name: {
+			            textStyle: {
+			                color: '#fff',
+			                backgroundColor: '#999',
+			                borderRadius: 3,
+			                padding: [3, 5]
+			            }
+			        },
+			        indicator: [
+			            { name: 'JavaScript', max: 5},
+			            { name: 'HTML', max: 5},
+			            { name: 'CSS', max: 5},
+			            { name: 'Vue', max: 5},
+			            { name: 'jQuery', max: 5},
+			            { name: 'AntDesign', max: 5}
+			        ]
+			    },
+			    series: [{
+			        name: '当前',
+			        type: 'radar',
+			        data: [
+			            {
+			                value: [3, 4, 4, 3, 3, 3],
+			                name: '当前状态'
+			            }
+			        ]
+			    }]
+			};
+			cstChart.setOption(cstOption);
+			// 职业技能树end
+			
+			// 人生旭日图start
+			var ldpChart = echarts.init(document.getElementById('life-dynamic-pie'));
+			var ldpOption = {
+				title: {
+				    text: '人生旭日图'
+				},
+			    series: {
+			        type: 'sunburst',
+			        data: [{
+			            name: '生活',
+			            value: 6,
+			            children: [{
+			                value: 1,
+			                name: 'Aa'
+			            }, {
+			                value: 2,
+			                name: 'Ab'
+			            }]
+			        }, {
+			            name: '工作',
+						value: 10,
+			            children: [{
+			                name: 'Ba',
+			                value: 4
+			            }, {
+			                name: 'Bb',
+			                value: 2
+			            }]
+			        }, {
+			            name: '睡眠',
+			            value: 7
+			        }]
+			    }
+			};
+			ldpChart.setOption(ldpOption);
+			// 人生旭日图end
+		</script>
+	</body>
+</html>
