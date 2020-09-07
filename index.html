@@ -4,7 +4,7 @@
  * @Author: xianran
  * @Date: 2020-08-31 16:56:21
  * @LastEditors: xianran
- * @LastEditTime: 2020-09-07 10:14:01
+ * @LastEditTime: 2020-09-07 11:07:16
 -->
 <!DOCTYPE html>
 <html>
@@ -14,10 +14,16 @@
 		<script src="./lib/echarts.min.js"></script>
 	</head>
 	<body>
-		<div id="career-skill-tree" style="width: 600px;height:400px;"></div>
-		<div id="life-dynamic-pie" style="width: 600px;height:400px;"></div>
+
+        <!-- 技能树 -->
+        <div id="career-skill-tree" style="width: 600px;height:400px;"></div>
+        <!-- 人生饼图 -->
+        <div id="life-dynamic-pie" style="width: 600px;height:400px;"></div>
+        <!-- 访客分布图 -->
+        <div id="visitor-dot-map" style="width: 600px;height:400px;"></div>
+
 		<script type="text/javascript">
-			// 职业技能树start
+			// 技能树start
 			var cstChart = echarts.init(document.getElementById('career-skill-tree'));
 			var cstOption = {
 			    title: {
@@ -56,9 +62,9 @@
 			    }]
 			};
 			cstChart.setOption(cstOption);
-			// 职业技能树end
+			// 技能树end
 			
-			// 人生旭日图start
+			// 时间饼图start
 			var ldpChart = echarts.init(document.getElementById('life-dynamic-pie'));
 			var ldpOption = {
 				title: {
@@ -93,7 +99,15 @@
 			    }
 			};
 			ldpChart.setOption(ldpOption);
-			// 人生旭日图end
+			// 时间饼图end
+
+            // 访客分布图
+            var data = [
+                    {name: '海门', value: 9},
+                    {name: '鄂尔多斯', value: 12},
+                    {name: '招远', value: 12},
+                    {name: '舟山', value: 12},
+                ];
 		</script>
 	</body>
 </html>
