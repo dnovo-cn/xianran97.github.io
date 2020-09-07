@@ -4,54 +4,59 @@
  * @Author: xianran
  * @Date: 2020-09-07 10:50:19
  * @LastEditors: xianran
- * @LastEditTime: 2020-09-07 10:50:22
+ * @LastEditTime: 2020-09-07 11:19:03
 -->
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8" />
-    <title>Document</title>
-    <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script> 
-    <script type="text/javascript">  
-        document.write('IP地址:' + returnCitySN["cip"] + ', CID:' + returnCitySN["cid"] + ', 地区:' + returnCitySN["cname"]+",浏览器版本:"+getBrowserInfo());
-        
-        function getBrowserInfo()
-{
-    var agent = navigator.userAgent.toLowerCase() ;
+    <head>
+        <meta charset="UTF-8" />
+        <title>测试访客地址</title>
+        <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+        <script type="text/javascript">
+            document.write(
+                "IP地址:" +
+                    returnCitySN["cip"] +
+                    ", CID:" +
+                    returnCitySN["cid"] +
+                    ", 地区:" +
+                    returnCitySN["cname"] +
+                    ",浏览器版本:" +
+                    getBrowserInfo()
+            );
 
-    var regStr_ie = /msie [\d.]+;/gi ;
-    var regStr_ff = /firefox\/[\d.]+/gi
-    var regStr_chrome = /chrome\/[\d.]+/gi ;
-    var regStr_saf = /safari\/[\d.]+/gi ;
-    
-    //IE
-    if(agent.indexOf("msie") > 0)
-    {
-        return agent.match(regStr_ie) ;
-    }
+            function getBrowserInfo() {
+                var agent = navigator.userAgent.toLowerCase();
 
-    //firefox
-    if(agent.indexOf("firefox") > 0)
-    {
-        return agent.match(regStr_ff) ;
-    }
+                var regStr_ie = /msie [\d.]+;/gi;
+                var regStr_ff = /firefox\/[\d.]+/gi;
+                var regStr_chrome = /chrome\/[\d.]+/gi;
+                var regStr_saf = /safari\/[\d.]+/gi;
 
-    //Chrome
-    if(agent.indexOf("chrome") > 0)
-    {
-        return agent.match(regStr_chrome) ;
-    }
+                //IE
+                if (agent.indexOf("msie") > 0) {
+                    return agent.match(regStr_ie);
+                }
 
-    //Safari
-    if(agent.indexOf("safari") > 0 && agent.indexOf("chrome") < 0)
-    {
-        return agent.match(regStr_saf) ;
-    }
+                //firefox
+                if (agent.indexOf("firefox") > 0) {
+                    return agent.match(regStr_ff);
+                }
 
-}
-    </script>
-</head>
+                //Chrome
+                if (agent.indexOf("chrome") > 0) {
+                    return agent.match(regStr_chrome);
+                }
 
-<body> 
-</body>
+                //Safari
+                if (
+                    agent.indexOf("safari") > 0 &&
+                    agent.indexOf("chrome") < 0
+                ) {
+                    return agent.match(regStr_saf);
+                }
+            }
+        </script>
+    </head>
+
+    <body></body>
 </html>
