@@ -1,5 +1,5 @@
 /* 定义字体 */
-@font-face{
+@font-face {
     font-family: KangKangTi;
     src: url("../font/SuCaiJiShiKangKangTi-2.ttf");
 }
@@ -145,32 +145,127 @@ img {
     border: none;
 }
 
-
 /* ----------------------------------------以上-清除重建公共样式标准 -----------------------------------------------*/
 
 /* 全局标签样式表 */
-#header{
+#header {
     display: flex;
     justify-content: space-between;
-    border: 1px solid skyblue;
     height: 60px;
     line-height: 60px;
 }
 
-.header-right ul{
+.header-right ul {
     display: flex;
 }
-.nav-item{
+.nav-item {
     width: 100px;
     text-align: center;
 }
 
-
-
 /* index-page的样式表 */
+#index-page .main-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 60px);
+    text-align: center;
+}
+
+.head-photo-bg {
+    display: inline-block;
+    width: 162px;
+    height: 162px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.head-photo-wrapper{
+    position: relative;
+}
+
+#index-page .head-photo {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    display: inline-block;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+}
+
+.head-photo-bg {
+    width: 166px;
+    height: 166px;
+    border-radius: 50%;
+    background:  linear-gradient(to right, #bb313e25, #bb313e25, #d7222925, #dd4a1625, #e4761525, #f5c50025, #f0e92725, #b1ce2425, #48a93525, #03944525, #157c4f25, #176a5825, #1b556325, #1d386f25, #1d386f25, #20277825, #52266325, #8a244b25);
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: 1s;
+    -moz-transition-property: -moz-transform;
+    -moz-transition-duration: 1s;
+    -webkit-animation: rotate 3s linear infinite;
+    -moz-animation: rotate 3s linear infinite;
+    -o-animation: rotate 3s linear infinite;
+    animation: rotate 3s linear infinite;
+}
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@-moz-keyframes rotate {
+    from {
+        -moz-transform: rotate(0deg);
+    }
+    to {
+        -moz-transform: rotate(359deg);
+    }
+}
+@-o-keyframes rotate {
+    from {
+        -o-transform: rotate(0deg);
+    }
+    to {
+        -o-transform: rotate(359deg);
+    }
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+.title-row {
+    margin: 20px 0;
+}
+.page-title{
+    font-size: 20px;
+}
+.sub-title{
+    font-size: 16px;
+}
 
 
-#footer{
+#index-page .main-wrapper ul {
+    display: flex;
+    justify-content: center;
+}
+#index-page .social-contact {
+    width: 120px;
+    font-size: 24px;
+}
+#index-page .social-contact .iconfont {
+    font-size: 24px;
+}
+
+#footer {
     font-family: Arial, Helvetica, sans-serif;
     position: fixed;
     bottom: 0;
